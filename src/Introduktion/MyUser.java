@@ -12,7 +12,7 @@ public class MyUser {
 
     private String yourWords;
     private String longestWord;
-    private  boolean checker;
+    private boolean checker;
 
     public MyUser() {
 
@@ -54,39 +54,36 @@ public class MyUser {
 
     public boolean getChecker() {
 
-            return checker;
+        return checker;
     }
 
 
     public void theCounter(String input1) {
 
-
-        numberOfRows = numberOfRows + 1;
-        numbersOfLetters += input1.length();
-
-
-        String[] wordCount = input1.split("\\s+");
-        Words += wordCount.length;
-
-        yourWords += input1 + " ";
-
-        String longest = Arrays.stream(input1.split(" "))
-                .max(Comparator.comparingInt(String::length))
-                .orElse(null);
-
-        if (longest.length() > longestWord.length())
-            longestWord = longest;
-
         if (input1.equals("stop")) {
             checker = false;
 
         }
+        numberOfRows = numberOfRows + 1;
+        numbersOfLetters += input1.length();
 
+
+        String[] wordCount = input1.split(" ");
+        Words += wordCount.length;
+
+        yourWords += input1 + " ";
+
+        String[] newLongestWord = input1.split(" ");
+        for (int i = 0; i < newLongestWord.length; i++)
+
+
+            if (newLongestWord[i].length() > longestWord.length()) {
+                longestWord = newLongestWord[i];
+
+            }
     }
 
 }
-
-
 
 
 
