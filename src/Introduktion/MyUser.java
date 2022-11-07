@@ -73,12 +73,10 @@ public class MyUser {
 
         yourWords += input1 + " ";
 
-        String[] newLongestWord = input1.split(" ");
-        for (int i = 0; i < newLongestWord.length; i++)
+        for (int i = 0; i < wordCount.length; i++)
 
-
-            if (newLongestWord[i].length() > longestWord.length()) {
-                longestWord = newLongestWord[i];
+            if (wordCount[i].length() > longestWord.length()) {
+                longestWord = wordCount[i];
 
             }
     }
